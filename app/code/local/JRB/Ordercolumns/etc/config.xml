@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/** 
+* @category   JRB
+* @package    JRB_Ordercolumns
+* @author     Jyotiranjan Biswal <biswal@jyotiranjan.in>
+*/
+-->
+<config>
+    <modules>
+        <JRB_Ordercolumns>
+            <version>0.1.0</version>
+        </JRB_Ordercolumns>
+    </modules>
+    <global>
+        <jrb_ordercolumns>
+            <class>JRB_Ordercolumns_Block</class>
+        </jrb_ordercolumns>
+        <!--<blocks>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>JRB_Ordercolumns_Block_Adminhtml_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>-->
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <admingridaddcolumn>
+                        <class>JRB_Ordercolumns_Model_Observer</class>
+                        <method>addNewColumnToOrderGrid</method>
+                    </admingridaddcolumn>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+            <!--<core_collection_abstract_load_before>
+                <observers>
+                    <admingridaddcolumn2>
+			<class>JRB_Ordercolumns_Model_Observer</class>
+			<method>beforeCollectionLoad</method>
+		    </admingridaddcolumn2>
+		</observers>
+	    </core_collection_abstract_load_before>-->
+	    <sales_order_grid_collection_load_before>
+                <observers>
+                    <admingridaddcolumn3>
+			<class>JRB_Ordercolumns_Model_Observer</class>
+			<method>beforeGridCollectionLoad</method>
+		    </admingridaddcolumn3>
+		</observers>
+            </sales_order_grid_collection_load_before>
+	</events>
+    </global>
+</config>

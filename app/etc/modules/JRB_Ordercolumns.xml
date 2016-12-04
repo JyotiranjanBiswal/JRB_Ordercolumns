@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @category   JRB
+* @package    JRB_Ordercolumns
+* @author     Jyotiranjan Biswal <biswal@jyotiranjan.in>
+*/
+-->
+<config>
+    <modules>
+        <JRB_Ordercolumns>
+            <active>true</active>
+            <codePool>local</codePool>
+        </JRB_Ordercolumns>
+    </modules>
+</config>
